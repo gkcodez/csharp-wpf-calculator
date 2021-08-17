@@ -4,6 +4,48 @@
              xmlns:local="clr-namespace:csharp_wpf_calculator"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <SolidColorBrush x:Key="PrimaryBackgroundColor" Color="SlateGray"></SolidColorBrush>
+        <SolidColorBrush x:Key="PrimaryAccentBackgroundColor" Color="OrangeRed"></SolidColorBrush>
+        <SolidColorBrush x:Key="SecondaryBackgroundColor" Color="DodgerBlue"></SolidColorBrush>
+        <SolidColorBrush x:Key="ForegroundColor" Color="White"></SolidColorBrush>
+
+        <Style TargetType="Button">
+        </Style>
+
+        <Style x:Key="CommonButtonStyle" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="2" BorderBrush="LightGray" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="FontSize" Value="30"></Setter>
+            <Setter Property="Margin" Value="5"></Setter>
+        </Style>
+
+        <Style TargetType="Button" x:Key="NumbersButtonStyle" BasedOn="{StaticResource CommonButtonStyle}">
+            <Setter Property="Background" Value="{StaticResource PrimaryBackgroundColor}"></Setter>
+            <Setter Property="Foreground" Value="{StaticResource ForegroundColor}"></Setter>
+        </Style>
+
+        <Style TargetType="Button" x:Key="OperatorsButtonStyle" BasedOn="{StaticResource CommonButtonStyle}">
+            <Setter Property="Background" Value="{StaticResource SecondaryBackgroundColor}"></Setter>
+            <Setter Property="Foreground" Value="{StaticResource ForegroundColor}"></Setter>
+        </Style>
+
+        <Style TargetType="Button" x:Key="SpecialButtonStyle" BasedOn="{StaticResource CommonButtonStyle}">
+            <Setter Property="Background" Value="{StaticResource PrimaryAccentBackgroundColor}"></Setter>
+            <Setter Property="Foreground" Value="{StaticResource ForegroundColor}"></Setter>
+        </Style>
     </Application.Resources>
 </Application>
