@@ -1,0 +1,54 @@
+﻿<Window x:Class="csharp_wpf_calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:csharp_wpf_calculator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="525" Width="350">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="0"  Grid.Row="0"  HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="30"
+               Grid.ColumnSpan="4" x:Name="OldResultLabel"/>
+        <Label Content="0"  Grid.Row="1"  HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="50"
+               Grid.ColumnSpan="4" x:Name="ResultLabel"/>
+
+        <Button Content="AC" Grid.Row="2" Grid.Column="0" Margin="3"  x:Name="ACButton"/>
+        <Button Content="+/-" Grid.Row="2" Grid.Column="1" Margin="3" x:Name="NegativeButton"/>
+        <Button Content="%" Grid.Row="2" Grid.Column="2" Margin="3" x:Name="PercentageButton"/>
+        <Button Content="/" Grid.Row="2" Grid.Column="3" Margin="3"  x:Name="DivideButton" Click="OperationButton_Click" Background="Orange" Foreground="White"/>
+
+        <Button Content="7" Grid.Row="3" Grid.Column="0" Margin="3" x:Name="SevenButton" Click="NumberButton_Click" Background="#444444" Foreground="White"/>
+        <Button Content="8" Grid.Row="3" Grid.Column="1" Margin="3" x:Name="EightButton" Click="NumberButton_Click" Background="#444444" Foreground="White"/>
+        <Button Content="9" Grid.Row="3" Grid.Column="2" Margin="3"  x:Name="NineButton" Click="NumberButton_Click" Background="#444444" Foreground="White"/>
+        <Button Content="*" Grid.Row="3" Grid.Column="3" Margin="3" x:Name="MultiplyButton" Click="OperationButton_Click" Background="Orange" Foreground="White"/>
+
+        <Button Content="4" Grid.Row="4" Grid.Column="0" Margin="3"  x:Name="FourButton" Click="NumberButton_Click" Background="#444444" Foreground="White"/>
+        <Button Content="5" Grid.Row="4" Grid.Column="1" Margin="3" x:Name="FiveButton" Click="NumberButton_Click" Background="#444444" Foreground="White"/>
+        <Button Content="6" Grid.Row="4" Grid.Column="2" Margin="3" x:Name="SixButton" Click="NumberButton_Click" Background="#444444" Foreground="White"/>
+        <Button Content="-" Grid.Row="4" Grid.Column="3" Margin="3" x:Name="SubtractButton"  Click="OperationButton_Click" Background="Orange" Foreground="White"/>
+
+        <Button Content="1" Grid.Row="5" Grid.Column="0" Margin="3" x:Name="OneButton" Click="NumberButton_Click" Background="#444444" Foreground="White"/>
+        <Button Content="2" Grid.Row="5" Grid.Column="1" Margin="3" x:Name="TwoButton" Click="NumberButton_Click" Background="#444444" Foreground="White"/>
+        <Button Content="3" Grid.Row="5" Grid.Column="2" Margin="3" x:Name="ThreeButton" Click="NumberButton_Click" Background="#444444" Foreground="White"/>
+        <Button Content="+" Grid.Row="5" Grid.Column="3" Margin="3" x:Name="AddButton" Click="OperationButton_Click" Background="Orange" Foreground="White"/>
+
+        <Button Content="0" Grid.Row="6" Grid.Column="0" Margin="3" Grid.ColumnSpan="2" x:Name="ZeroButton"  Click="NumberButton_Click" Background="#444444" Foreground="White"/>
+        <Button Content="." Grid.Row="6" Grid.Column="2" Margin="3" x:Name="DecimalButton"  Background="#444444" Foreground="White"/>
+        <Button Content="=" Grid.Row="6" Grid.Column="3" Margin="3" x:Name="EqualsButton"  Background="green" Foreground="White"/>
+    </Grid>
+</Window>
